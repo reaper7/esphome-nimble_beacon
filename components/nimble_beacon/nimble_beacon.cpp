@@ -38,9 +38,9 @@ void NimBleBeacon::update_advertisement(const std::array<uint8_t, 16> &uuid) {
     beacon.setManufacturerId(0x4C00); // fake Apple 0x004C LSB (ENDIAN_CHANGE_U16!)
     beacon.setMajor(this->major_);
     beacon.setMinor(this->minor_);
-    auto uuid = NimBLEUUID(this->uuid_.data(), this->uuid_.size(), true);
-    ESP_LOGD(TAG, "UUID: %s", uuid.toString().c_str());
-    beacon.setProximityUUID(uuid);
+    auto nuuid = NimBLEUUID(this->uuid_.data(), this->uuid_.size(), true);
+    ESP_LOGD(TAG, "UUID: %s", nuuid.toString().c_str());
+    beacon.setProximityUUID(nuuid);
     beacon.setSignalPower(0xC5);    // from esp32_ble_beacon.cpp
 
     // create advertisement data
