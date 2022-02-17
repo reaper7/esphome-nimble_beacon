@@ -5,7 +5,7 @@ from esphome.const import (
     CONF_ID,
     CONF_TYPE,
     CONF_UUID,
-    ESP_PLATFORM_ESP32,
+    PLATFORM_ESP32,
 )
 
 
